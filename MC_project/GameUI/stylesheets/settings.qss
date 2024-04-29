@@ -1,0 +1,106 @@
+* {
+	color: #dedcd9;
+	background-color: #262522;
+	font-family: "Montserrat Medium";
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 16px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+QLabel#HeaderFieldText {
+	font-size: 20px;
+	font-family: "Montserrat SemiBold";
+	color: white;
+}
+
+QLabel#Empty {
+	font-size: 5px;
+}
+
+QComboBox, QLineEdit {
+	padding: 3px;
+	background-color: #3C3A38;
+	border-radius: 7px;
+	border: 1px solid #504E4C;
+	selection-background-color: #5D9948;
+}
+
+QComboBox::hover, QLineEdit:hover {
+	border: 1px solid #C3C2C1;
+}
+
+QComboBox {
+	height: 20px; 
+	width: 140%;
+}
+
+QComboBox QAbstractItemView {
+	border-radius: 10px;
+	background-color: #3C3A38;
+	margin: 0 0 0 0;
+}
+
+
+QComboBox QAbstractItemView::item:selected {
+	background-color: #5D9948;
+}
+
+QComboBox::drop-down:button {
+	border-width: 0px;
+}
+
+QComboBox::down-arrow{
+	image: url(:/GameUI/images/drop-down-arrow.png);
+	width: 10%;
+}
+
+QSlider::groove:horizontal { 
+	background-color: #3C3A38;
+	height: 10px; 
+	border-radius: 4px;
+}
+
+QSlider::handle:horizontal { 
+	background-color: #5D9948; 
+	border: 2px solid #5D9948; 
+	width: 16px; 
+	height: 20px; 
+	line-height: 20px; 
+	margin-top: -5px; 
+	margin-bottom: -5px; 
+	border-radius: 10px; 
+}
+
+QSlider::handle:horizontal:hover { 
+	border-color: #80c269;
+	background-color: #80c269;
+}
+
+QWidget#updateButton {
+	background-color: #6e9451;
+	border-radius: 10px;
+}
+
+QWidget#updateButton:hover {
+	background-color: #7ea85e;
+}
+
+QWidget#discardButton {
+	background-color: #E02828;
+	border-radius: 10px;
+}
+
+QWidget#discardButton:hover {
+	background-color: #ed3b3b;
+}
+
+QLabel#headerLabel {
+	background-color: transparent;
+	font-size: 15px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: "Montserrat SemiBold";
+}	

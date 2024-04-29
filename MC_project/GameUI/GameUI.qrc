@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/GameUI">
+        <file>images/presentation.png</file>
+        <file>fonts/Montserrat-Black.ttf</file>
+        <file>fonts/Montserrat-Bold.ttf</file>
+        <file>fonts/Montserrat-Light.ttf</file>
+        <file>fonts/Montserrat-Medium.ttf</file>
+        <file>fonts/Montserrat-Regular.ttf</file>
+        <file>fonts/Montserrat-SemiBold.ttf</file>
+        <file>fonts/Montserrat-Thin.ttf</file>
+        <file>images/drop-down-arrow.png</file>
+        <file>images/profile.png</file>
+        <file>images/controller.svg</file>
+        <file>images/settings.svg</file>
+        <file>images/bridge.png</file>
+        <file>images/column.png</file>
+        <file>images/load.png</file>
+        <file>images/save.png</file>
+    </qresource>
+</RCC>

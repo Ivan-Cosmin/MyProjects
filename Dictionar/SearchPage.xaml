@@ -1,0 +1,61 @@
+﻿<Window x:Class="Dictionar.SearchPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dictionar"
+        mc:Ignorable="d"
+        Title="SearchPage" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="LightGray"/>
+                <GradientStop Color="BlanchedAlmond" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBox x:Name="textBoxInput" Width="420" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left" TextChanged="textBoxInput_TextChanged_1" Text="{Binding Word.WordText}" Margin="130,75,0,0" Opacity="0.8"/>
+        <Button Content="Search"
+                HorizontalAlignment="Left"
+                Margin="555,75,0,0"
+                VerticalAlignment="Top"
+                Height="28" Width="73"
+                Click="Search_Click"
+                Style="{StaticResource CustomButtonStyle}" FontSize="12">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <ListBox x:Name="listBoxSuggestions" Width="420" Height="200" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="140,94,10,10"  Visibility="Collapsed" SelectionChanged="listBoxSuggestions_SelectionChanged"/>
+        <Image x:Name="Image_dictionary" Height="253" Margin="528,171,0,0" VerticalAlignment="Top" OpacityMask="Black" Source="{Binding ImageSource}" HorizontalAlignment="Left" Width="253"/>
+        <TextBlock HorizontalAlignment="Left" Height="65" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319" FontSize="48" FontWeight="Bold" TextAlignment="Center"><Run Language="ro-ro" Text="Search Page"/></TextBlock>
+        <Button Content="Reset"
+            HorizontalAlignment="Left"
+            Margin="555,108,0,0"
+            VerticalAlignment="Top"
+            Height="28" Width="73"
+            Click="Reset_Click"
+            Style="{StaticResource CustomButtonStyle}" FontSize="12">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+        <ListBox x:Name="searchResultsListBox" HorizontalAlignment="Right" Height="257" Margin="0,167,295,0" VerticalAlignment="Top" Width="482" SelectionChanged="searchResultsListBox_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Padding="5">
+                        <StackPanel>
+                            <TextBlock Text="{Binding WordText}" FontWeight="Bold" />
+                            <TextBlock Text="{Binding Category}" FontStyle="Italic" />
+                            <TextBlock Text="{Binding Description}" TextWrapping="Wrap" />
+                            <Separator />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ComboBox x:Name="categoryComboBox" HorizontalAlignment="Left" Margin="130,108,0,0" VerticalAlignment="Top" Width="420" SelectedIndex="-1" Height="28" BorderBrush="White" Background="White" SelectionChanged="categoryComboBox_SelectionChanged"/>
+        <Label Content="Search Text:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,75,0,0" Height="30" Width="102"/>
+        <Label Content="Category:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="23,108,0,0" Width="102" Height="28"/>
+
+    </Grid>
+</Window>

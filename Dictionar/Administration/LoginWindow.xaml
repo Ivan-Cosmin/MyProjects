@@ -1,0 +1,72 @@
+﻿<Window x:Class="Dictionar.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dictionar"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="LightGray" />
+                <GradientStop Color="BlanchedAlmond" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <TextBlock 
+            x:Name="LoginTitle" 
+            HorizontalAlignment="Center" 
+            Height="64" Width="218" 
+            Margin="0,35,0,0"
+            VerticalAlignment="Top"
+            TextAlignment="Center" 
+            FontSize="48" 
+            FontWeight="Bold">
+            <Run Language="en-en" Text="LOGIN"/>
+        </TextBlock>
+
+        <TextBox x:Name="usernameBox" 
+                HorizontalAlignment="Left"
+                Height="23" Width="210" 
+                VerticalAlignment="Top"
+                Margin="343,156,0,0"/>
+        <PasswordBox 
+                x:Name="passwordBox" 
+                HorizontalAlignment="Left"
+                Height="23" Width="210"  
+                VerticalAlignment="Top" Margin="343,185,0,0"/>
+
+        <TextBlock HorizontalAlignment="Left"
+                Height="23" Width="109"
+                TextWrapping="Wrap"
+                VerticalAlignment="Top"
+                TextAlignment="Center"
+                FontSize="18" Margin="241,156,0,0"><Run Text="Username:"/></TextBlock>
+        <TextBlock 
+                HorizontalAlignment="Left"
+                Height="23"
+                TextWrapping="Wrap"
+                VerticalAlignment="Top"
+                Width="109"
+                TextAlignment="Center"
+                FontSize="18" Margin="241,185,0,0"><Run Text="Password: "/></TextBlock>
+
+        <Button
+            Content="Log in"
+            HorizontalAlignment="Left"
+            Margin="278,229,0,0"
+            VerticalAlignment="Top"
+            Height="29" Width="218"
+            Click="LogIn_Click"
+            FontSize="14" 
+            Style="{StaticResource CustomButtonStyle}">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>

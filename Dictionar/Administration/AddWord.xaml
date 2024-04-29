@@ -1,0 +1,82 @@
+﻿<Window x:Class="Dictionar.Administration.AddWord"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dictionar.Classes"
+        mc:Ignorable="d"
+        Title="AddWordWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="LightGray" />
+                <GradientStop Color="BlanchedAlmond" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label 
+            Content="Category:"
+            Grid.Row="0"
+            HorizontalAlignment="Right"
+            Width="346" Height="35" 
+            VerticalAlignment="Bottom"
+            HorizontalContentAlignment="Center"
+            Margin="0,0,430,339" FontSize="14"/>
+
+        <ComboBox 
+            x:Name="categoryComboBox"
+            Height="32"
+            Margin="0,0,430,307" 
+            VerticalAlignment="Bottom" 
+            IsEditable="True"
+            Text="{Binding Word.Category, UpdateSourceTrigger=PropertyChanged}"
+            SelectionChanged="categoryComboBox_SelectionChanged" Opacity="0.8" HorizontalAlignment="Right" Width="346"/>
+
+        <Label
+            Content="Word:"
+            Margin="0,0,430,269"
+            HorizontalContentAlignment="Center" FontSize="14" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="346"/>
+
+        <TextBox 
+            x:Name="wordTextBox"
+            Width="346"  Height="30" 
+            VerticalAlignment="Bottom"
+            Text="{Binding Word.WordText, UpdateSourceTrigger=PropertyChanged}"
+            Margin="0,0,430,234" Opacity="0.8" HorizontalAlignment="Right"/>
+
+        <Label 
+            Content="Description:" 
+            Margin="430,0,0,344" 
+            HorizontalContentAlignment="Center" FontSize="14" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="346"/>
+
+        <TextBox
+            x:Name="descriptionTextBox"
+            Margin="430,0,0,307" Opacity="0.8"
+            Text="{Binding Word.Description, UpdateSourceTrigger=PropertyChanged}" Height="32" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="346"/>
+
+        <Button 
+            Content="Select Image"
+            Click="SelectImageButton_Click"
+            Margin="430,0,0,269"
+            Style="{StaticResource CustomButtonStyle}" FontSize="14" Background="#FFB6C1AD" Height="29" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="346" BorderBrush="Black"/>
+
+        <TextBox 
+            x:Name="imagePathTextBox"
+            Margin="430,0,0,234" 
+            IsEnabled="False"
+            TextChanged="imagePathTextBox_TextChanged"
+            Text="{Binding Word.ImagePath, UpdateSourceTrigger=PropertyChanged}" Background="White" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="346"/>
+
+        <Button 
+            Content="Add"
+            Click="AddButton_Click"
+            Margin="260,255,260,0" 
+            VerticalAlignment="Top" 
+            Height="54" 
+            FontWeight ="Bold"
+            Style="{StaticResource CustomButtonStyle}"/>
+    </Grid>
+</Window>

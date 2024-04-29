@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Translation Files">
+      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
+      <Extensions>ts</Extensions>
+    </Filter>
+    <Filter Include="Screens">
+      <UniqueIdentifier>{b9dd2f63-0ebe-4ae4-8814-1c42ae14d633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens\Main Menu">
+      <UniqueIdentifier>{65b0505d-1e2d-4b58-abbb-7c28f12aa1ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens\Settings">
+      <UniqueIdentifier>{29f5e7b8-47cb-4353-9803-a09e0aaff459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main Files">
+      <UniqueIdentifier>{60423edb-546c-41f6-afbd-b4ba2fd511a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens\Game">
+      <UniqueIdentifier>{cf1111eb-77fa-4655-b097-b452ac333d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Custom Widgets">
+      <UniqueIdentifier>{01c13fa6-a2c9-44b7-9d0b-30b1dcac141b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Utils">
+      <UniqueIdentifier>{9a90bf90-f92d-45b0-9dc2-e1bf68378819}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Screens\Game\Widgets">
+      <UniqueIdentifier>{ef0fdea8-9f24-4071-a351-29dfe8998954}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="GameUI.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameUI.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Main Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FileUtils.cpp">
+      <Filter>Resource Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SettingsScreen.cpp">
+      <Filter>Screens\Settings</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScreen.cpp">
+      <Filter>Screens\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuScreen.cpp">
+      <Filter>Screens\Main Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="Slider.cpp">
+      <Filter>Resource Files\Custom Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>Resource Files\Custom Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorUtils.cpp">
+      <Filter>Resource Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="WidgetUtils.cpp">
+      <Filter>Resource Files\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardWidget.cpp">
+      <Filter>Screens\Game\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="HistoryWidget.cpp">
+      <Filter>Screens\Game\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerBar.cpp">
+      <Filter>Screens\Game\Widgets</Filter>
+    </ClCompile>
+    <ClCompile Include="Dialog.cpp">
+      <Filter>Screens\Game\Widgets</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileUtils.h">
+      <Filter>Resource Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorUtils.h">
+      <Filter>Resource Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="WidgetUtils.h">
+      <Filter>Resource Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerBar.h">
+      <Filter>Screens\Game\Widgets</Filter>
+    </ClInclude>
+    <ClInclude Include="Dialog.h">
+      <Filter>Screens\Game\Widgets</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="GameUI.h">
+      <Filter>Main Files</Filter>
+    </QtMoc>
+    <QtMoc Include="MainMenuScreen.h">
+      <Filter>Screens\Main Menu</Filter>
+    </QtMoc>
+    <QtMoc Include="GameScreen.h">
+      <Filter>Screens\Game</Filter>
+    </QtMoc>
+    <QtMoc Include="SettingsScreen.h">
+      <Filter>Screens\Settings</Filter>
+    </QtMoc>
+    <QtMoc Include="Slider.h">
+      <Filter>Resource Files\Custom Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="Button.h">
+      <Filter>Resource Files\Custom Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="BoardWidget.h">
+      <Filter>Screens\Game\Widgets</Filter>
+    </QtMoc>
+    <QtMoc Include="HistoryWidget.h">
+      <Filter>Screens\Game\Widgets</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

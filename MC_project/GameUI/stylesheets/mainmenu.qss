@@ -1,0 +1,43 @@
+QLabel#imageWidget {
+	margin: 20 0 20 20;
+	border: 10px solid;
+	border-radius: 20px;
+}
+
+QWidget#playButton {
+	background-color: #6e9451;
+	border-radius: 20px;
+	margin: 20px;
+}
+
+QWidget#settingsButton {
+	background-color: #403E3C;
+	border-radius: 20px;
+	margin: 20px;
+}
+
+QWidget#playButton:hover {
+	background-color: #7ea85e;
+}
+
+QWidget#settingsButton:hover {
+	background-color: #4f4d4a;
+}
+
+QLabel#headerLabel {
+	background-color: transparent;
+	padding-top: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+}	
+
+QLabel#descriptionLabel {
+	background-color: transparent;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+QSvgWidget#icon{
+	background-color: transparent;
+}

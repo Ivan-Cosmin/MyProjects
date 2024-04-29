@@ -1,0 +1,122 @@
+﻿<Window x:Class="Checkers.View.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Checkers.ViewModels"
+        xmlns:local="clr-namespace:Checkers.View"
+        mc:Ignorable="d"
+        Title="Chekers" Height="800" Width="1080" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <vm:GameVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="503*"/>
+            <ColumnDefinition Width="37*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="333*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+
+        <Menu
+            Background="#FF939488" Grid.RowSpan="2" Grid.ColumnSpan="2">
+            <MenuItem Header="File">
+                <MenuItem Header="New Game"
+                 Command="{Binding NewGameCommand}"
+                 />
+                <MenuItem Header="Save"
+                 Command="{Binding SaveGameCommand}"/>
+                <MenuItem Header="Open"
+                 Command="{Binding LoadGameCommand}"/>
+                <MenuItem Header="Allow Multiple Jumps"
+                 IsCheckable="True"
+                 Command="{Binding ToggleMultipleJumps}"
+                 IsChecked="{Binding MultipleJump}"
+                 />
+                <MenuItem Header="Statistics"
+                 Command="{Binding DisplayStatisticsCommand}"
+                 />
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Command="{Binding DisplayInfoCommand}"/>
+            </MenuItem>
+        </Menu>
+
+        <Label
+          Content="{Binding PlayerTurn}"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          FontSize="30" Grid.Row="1"
+          />
+
+        <Label
+        Content="{Binding WhiteCount}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        FontSize="30" Grid.Column="1" Margin="0,-40,0,0" 
+        />
+
+        <Label
+        Content="{Binding BlackCount}"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        FontSize="30" Grid.Column="1" Margin="0,40,0,0" 
+        />
+
+        <Border
+            BorderThickness="3"
+            BorderBrush="Black"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            >
+            <ItemsControl
+            ItemsSource="{Binding GameBoard}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ItemsControl
+                   ItemsSource="{Binding}">
+
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border
+                                       Height="80"
+                                       Width="80"
+                                       BorderThickness="1"
+                                       BorderBrush="{Binding CellBorderColor}">
+                                        <Button
+                                           Command="{Binding OnClickCommand}"
+                                           CommandParameter="{Binding}"
+                                           >
+                                            <Button.Template>
+                                                <ControlTemplate>
+                                                    <Grid>
+                                                        <Image 
+                                                           Source="{Binding Path=BackgroundImage}"
+                                                           Stretch="UniformToFill"/>
+                                                        <Image
+                                                           Source="{Binding Path=PieceImage}"
+                                                           Stretch="UniformToFill"/>
+                                                    </Grid>
+                                                </ControlTemplate>
+                                            </Button.Template>
+                                        </Button>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+
+                        </ItemsControl>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Border>
+    </Grid>
+</Window>

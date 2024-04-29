@@ -1,0 +1,22 @@
+﻿<Window x:Class="Dictionar.Gamemode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dictionar"
+        mc:Ignorable="d"
+        Title="Gamemode" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="LightGray"/>
+                <GradientStop Color="BlanchedAlmond" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <TextBlock x:Name="DescriptionBox" TextWrapping="Wrap" Margin="291,149,291,0" RenderTransformOrigin="0.52,1.031" TextAlignment="Center" Height="98" VerticalAlignment="Top" FontSize="16" />
+        <Image x:Name="ImageBox" Source="{Binding ImageSource}" Margin="274,0,274,150" Height="212" VerticalAlignment="Bottom"/>
+        <Button x:Name="nextButton" Content="Next" Style="{StaticResource CustomButtonStyle}" Click="NextButton_Click" Margin="345,323,345,67" RenderTransformOrigin="4.09,4.378" />
+        <TextBox x:Name="wordInputTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,300,0,0"  Width="218" Background="#FF9C8989" TextAlignment="Center"/>
+    </Grid>
+</Window>

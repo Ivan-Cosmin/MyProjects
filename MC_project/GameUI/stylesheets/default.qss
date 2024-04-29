@@ -1,0 +1,8 @@
+* {
+	color: white;
+	background-color: #302E2B;
+	font-family: "Montserrat SemiBold";
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	
+}
