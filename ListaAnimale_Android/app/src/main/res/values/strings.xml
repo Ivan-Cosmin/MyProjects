@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Tema</string>
+    <string name="close_app">Close</string>
+    <string name="region">Region</string>
+    <string name="animal_name">Animal Name</string>
+    <string name="animal_description">Animal Description</string>
+</resources>
