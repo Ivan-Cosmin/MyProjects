@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/mainwindow">
+        <file>Harta_Luxemburg.xml</file>
+    </qresource>
+</RCC>
