@@ -1,0 +1,130 @@
+﻿<Window x:Class="TheApp.Views.ManufacturersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ctx="clr-namespace:TheApp.ViewModels"
+        xmlns:local="clr-namespace:TheApp.Views"
+        mc:Ignorable="d"
+        Title="ManufacturersWindow" Height="610" Width="800" ResizeMode="NoResize">
+    <Window.DataContext>
+        <ctx:ManufacturersVM/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="LightGray" />
+                <GradientStop Color="BlanchedAlmond" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label 
+            Content="Manufacturer name"
+            Grid.Row="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,16,590,0" 
+            Width="179"
+            Height="42" 
+            HorizontalContentAlignment="Right"
+            FontSize="14" VerticalContentAlignment="Center"
+        />
+        <TextBox 
+            x:Name="UsernameBox"
+            Width="569" 
+            Height="42" 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,16,14,0"
+            Opacity="0.8"
+            Text="{Binding Manufacturer.Name}"
+            />
+
+        <Label 
+            Content="Country of origin"
+            Grid.Row="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,60,590,0" 
+            Width="179"
+            Height="42" 
+            HorizontalContentAlignment="Right"
+            FontSize="14" VerticalContentAlignment="Center"
+        />
+        <TextBox 
+            x:Name="CountryOfOriginBox"
+            Width="569" 
+            Height="42" 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,60,14,0"
+            Opacity="0.8"
+            Text="{Binding Manufacturer.CountryOfOrigin}"
+            />
+
+        <Button 
+            Content="Add"
+            Margin="0,111,395,0" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Height="44" 
+            Width="373"
+            FontWeight ="Bold"
+            Command="{Binding AddCommand}"
+            CommandParameter="{Binding Manufacturer}"
+        />
+        <Button 
+            Content="Modify"
+            Margin="0,161,395,0" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Height="44" 
+            Width="373"
+            FontWeight ="Bold"
+            Command="{Binding ModifyCommand}"
+            CommandParameter="{Binding Manufacturer}"
+        />
+        <Button 
+            Content="Deactivate"
+            Margin="0,161,14,0" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Height="44" 
+            Width="372"
+            FontWeight ="Bold"
+            Command="{Binding DeleteCommand}"
+            CommandParameter="{Binding Manufacturer}"
+        />
+        <Button 
+            Content="Activate"
+            Margin="0,111,14,0" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Height="44" 
+            Width="372"
+            FontWeight ="Bold"
+            Command="{Binding ActivateCommand}"
+            CommandParameter="{Binding Manufacturer}"
+        />
+
+        <DataGrid 
+            x:Name="ManufacturersGrid" 
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding ManufacturersList, UpdateSourceTrigger=PropertyChanged}"
+            IsReadOnly="True" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Top"
+            ScrollViewer.VerticalScrollBarVisibility="Visible"
+            SelectionMode="Extended" Height="329" Width="756" Margin="15,222,0,0"
+            SelectedItem="{Binding SelectedManufacturer, UpdateSourceTrigger=PropertyChanged}"
+        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Country of Origin" Binding="{Binding CountryOfOrigin}"/>
+                <DataGridTextColumn Header="Inactive" Binding="{Binding Deleted}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Window>
